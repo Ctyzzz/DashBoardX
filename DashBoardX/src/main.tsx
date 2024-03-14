@@ -16,6 +16,7 @@ const store = setupStore()
 const queryClient = new QueryClient()
 
 ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
         <BrowserRouter>
@@ -25,4 +26,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </BrowserRouter>
       </AuthProvider>
     </QueryClientProvider>
+  </React.StrictMode>
 )

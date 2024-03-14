@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom"
 import Header from "./Header/Header"
 import useModal from "../hooks/useModal"
 
@@ -8,20 +9,15 @@ import { useSelector } from "react-redux";
 
 const Layout = () => {
 
-  const [isShowingModal, toggleModal, setIsShowing] = useModal();
-  //const { isAuth } = useAuth()
-  const isAuth = !!useSelector(state=>state.authReducer.accessToken.token)
-  useEffect(()=>{isAuth&&setIsShowing(false)},[isAuth])
-  // useEffect(() => {
-	// 	if (isAuth) {
-	// 		setIsShowing(false)
-	// 	}
-	// }, [isAuth])
-  return (
-    <>
-        
-    </>
-  )
+    const [isShowingModal, toggleModal, setIsShowing] = useModal();
+    const isAuth = !!useSelector(state=>state.authReducer.accessToken.token)
+    useEffect(()=>{isAuth&&setIsShowing(false)},[isAuth])
+
+    return (
+        <>
+            <Outlet />
+        </>
+    )
 }
 
 export { Layout }

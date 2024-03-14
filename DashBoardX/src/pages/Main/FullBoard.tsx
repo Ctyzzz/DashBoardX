@@ -1,4 +1,4 @@
-const FullBoard = () => {
+function FullBoard()  {
     return(
         <>
             <div>hui</div>
@@ -6,7 +6,6 @@ const FullBoard = () => {
             <div>hui</div>
             <div>hui</div>
             <div>hui</div>
-            
         </>
     )
 }
