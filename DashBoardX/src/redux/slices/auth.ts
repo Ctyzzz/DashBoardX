@@ -69,8 +69,8 @@ const authSlice = createSlice({
           state.refreshToken.token = null;
           state.accessToken.status = "error";
           state.refreshToken.status = "error";
-          Cookies.remove("accessToken");
-          Cookies.remove("refreshToken");
+          removeCookie("accessToken");
+          removeCookie("refreshToken");
         }
       })
       .addCase(fetchRegister.pending, (state) => {
@@ -80,8 +80,8 @@ const authSlice = createSlice({
       .addCase(fetchRegister.fulfilled, (state, action) => {
         state.accessToken.token = action.payload.access_token;
         state.refreshToken.token = action.payload.refresh_token;
-        Cookies.set("accessToken", action.payload.access_token, { expires: 1 });
-        Cookies.set("refreshToken", action.payload.refresh_token, {
+        setCookie("accessToken", action.payload.access_token, { expires: 1 });
+        setCookie("refreshToken", action.payload.refresh_token, {
           expires: 1,
         });
         state.accessToken.status = "loaded";
@@ -98,8 +98,8 @@ const authSlice = createSlice({
       .addCase(fetchRefresh.fulfilled, (state, action) => {
         state.accessToken.token = action.payload;
         state.refreshToken.token = action.payload;
-        Cookies.set("accessToken", action.payload.access_token, { expires: 1 });
-        Cookies.set("refreshToken", action.payload.refresh_token, {
+        setCookie("accessToken", action.payload.access_token, { expires: 1 });
+        setCookie("refreshToken", action.payload.refresh_token, {
           expires: 1,
         });
         state.accessToken.status = "loaded";
@@ -110,8 +110,8 @@ const authSlice = createSlice({
         state.refreshToken.token = null;
         state.accessToken.status = "error";
         state.refreshToken.status = "error";
-        Cookies.remove("accessToken");
-        Cookies.remove("refreshToken");
+        removeCookie("accessToken");
+        removeCookie("refreshToken");
       });
   },
 });
