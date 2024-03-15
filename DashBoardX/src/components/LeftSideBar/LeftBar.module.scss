@@ -1,0 +1,114 @@
+@import "../../static/index.scss";
+
+
+
+.leftBar{
+    display: flex;
+    flex-direction: column;
+    padding-top: 1%;
+    padding-left: 1%;
+    margin-right: 85%;
+    background-color: #212B36;
+    background-repeat: repeat-y;
+    min-height: 916px;
+
+
+    &__title{
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 26px;
+        color: #FFFFFF;
+
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    &__mainbtn{
+        display:flex;
+        align-items: center;
+        margin-top: 15%;
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        color:#454F5B;
+        cursor: pointer;
+
+        
+        
+        &:hover{
+            color: #FFFFFF;
+            transition: 0.7s;
+        }
+        
+
+        img{
+            transform: scale(0.7);
+            fill:#454F5B;
+        }
+    }
+
+    &__pages{
+        display:flex;
+        align-items: center;
+        margin-top: 1%;
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        color:#454F5B;
+        text-decoration: none;
+        cursor: pointer;
+        
+        
+
+        .page{
+            color: #454F5B;
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 100%;
+            
+            &__pgAuth{
+
+                &__subtitles{
+                    display: flex;
+                    flex-direction: row;
+                    cursor: pointer;
+        
+                    &:hover{
+                        color: #FFFFFF;
+                        transition: 0.7s;
+                    }
+        
+
+                    img{
+                        transform: scale(0.7);
+                        fill:#454F5B;
+                    }
+                }
+
+                &__content{
+
+                    &__menu{
+                        font-family: "Inter", sans-serif;
+                        font-weight: 500;
+                        font-size: 18px;
+                        display: flex;
+                        flex-direction: column;
+                        flex-wrap: wrap;
+                        row-gap: 10px;
+    
+                        li{
+                            color:#454F5B;
+                            cursor: pointer;
+                             &:hover{
+                                color: #FFFFFF;
+                                transition: 0.7s;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -5,6 +5,7 @@ import useModal from "../hooks/useModal"
 import { useAuth } from "../hooks/auth/useAuth"
 import { useEffect } from 'react';
 import { useSelector } from "react-redux";
+import LeftBar from "./LeftSideBar/LeftBar";
 
 
 const Layout = () => {
@@ -16,6 +17,7 @@ const Layout = () => {
     return (
         <>
             <Outlet />
+            <LeftBar/>
         </>
     )
 }
